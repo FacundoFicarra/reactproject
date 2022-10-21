@@ -8,6 +8,7 @@ export default function BasicExample() {
 return (
     <Navbar bg="dark" variant="dark">
         <Container>
+            <img src="https://www.pngall.com/wp-content/uploads/4/Cyber-Security-PNG.png" width="100rem"></img>
             <Navbar.Brand href="#home">Inicio</Navbar.Brand>
             <Navbar.Toggle aria-controls="basic-navbar-nav" />
             <Navbar.Collapse id="basic-navbar-nav">
@@ -24,31 +25,3 @@ return (
 );
 }
 
-
-/*export default function Navbar({conBoton, color, funcionLogin}){
-    console.log(conBoton);
-    console.log(color);
-    return (
-    <div>
-        <div style={{backgroundColor: color}}>
-            logo--colocar logo
-            <ul>
-                <li>
-                    <a href="https://google.com">ir a google</a>
-                </li>
-                <li>
-                    <a href="https://google.com">ir a google</a>
-                </li>
-                <li>
-                    <a href="https://google.com">ir a google</a>
-                </li>
-                <li>
-                    <a href="https://google.com">ir a google</a>
-                </li>
-            </ul>
-            {conBoton? <button onClick={() => funcionLogin()}>LOGIN</button> : ""} ESTO ES UN IF
-            
-        </div>
-    </div>
-    )
-}*/

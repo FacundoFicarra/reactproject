@@ -8,20 +8,13 @@ import CartWidget from './components/CartWidget';
 
 
 export default function App() {
-  function saludar (){
-    alert("HOLA CHIQUES")
-  }
-
-  function funcionLogin() {
-    alert("algo importante del login")
-  }
   
   return ( 
   <>
     
     <Navbar></Navbar>
+    <ItemListContainer greeting={true}></ItemListContainer>
     <BodyApp></BodyApp>
-    
     <Footer></Footer>
   </>
   );
