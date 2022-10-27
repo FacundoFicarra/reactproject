@@ -1,4 +1,5 @@
 import React,{useState} from 'react'
+import ItemList from './ItemList'
 
 
 export default function ItemListContainer({greeting}) {
@@ -16,6 +17,7 @@ export default function ItemListContainer({greeting}) {
         <>
         <div style={{textAlign: "center", backgroundColor: "black", color:"red"}}>
             <h2>Welcome Runner!</h2>
+            <ItemList></ItemList>
         </div>
         
         </>
