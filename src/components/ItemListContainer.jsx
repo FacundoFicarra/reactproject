@@ -1,48 +1,44 @@
 import React,{useState} from 'react'
 import ItemList from './ItemList'
+import { useParams } from 'react-router-dom'
+import { useEffect } from 'react'
+export default function ItemListContainer() {
+
+const {idcategory} = useParams()
+
+const [productos,setProductos] = useState([])
+let productosHC = [
+    {id:100, name:"sandevistan",category:"militar",precio:100},
+    {id:101, name:"Weapon hand",category:"militar",precio:200},
+    {id:102, name:"mantis blade",category:"comun",precio:400},
+    {id:103, name:"gorilla_arms",category:"comun",precio:500},
+]
 
 
-export default function ItemListContainer({greeting}) {
-/*
 
-//al contador ponerlo en un "ItemCount.jsx" y poner contador +1 y contador -1, que no supere el stock disponible, mirar clase5 del drive
+useEffect(()=>{
+    const productosPromise = new Promise((res,rej)=>{
+        setTimeout(()=>{
+            res(productosHC)
+        },2000)
+    })
+    
+    productosPromise.then((res)=> {
+        if(idcategory){
+            setProductos(res.filter((item)=>item.category==idcategory))
+        }else{
+            setProductos(res)
+        }
+    });
+  }, [idcategory]);
 
-            <button onClick={()=>{
-    cont = cont +1
-    setCont(cont+1)}}>sumar al contador: {{cont}}</button>
-*/
 
 
-    return greeting ? (
-        <>
-        <div style={{textAlign: "center", backgroundColor: "black", color:"red"}}>
-            <h2>Welcome Runner!</h2>
-            <ItemList></ItemList>
+    return  (
+        <div style={{backgroundcolor:"green", border:"2px solid green"}}>
+          <ItemList productos={productos}></ItemList>
         </div>
-        
-        </>
-    ) : (
-        <div style={{textAlign: "center", backgroundColor:"red", color:"black"}}>
-            <h2>Go away!</h2>
-        </div>
-    )
-}
+      );
+    }
 
 
-
-/*
-function ({greeting})
-return(
-    <div style={}>
-        greeting
-    </div>
-)*/
-
-
-/*HACER EL GREETING Y LANDING
-Respecto a la prop "greeting", será nada más una prop con ese nombre (greeting)-->
-        <--que enviaremos un string al ItemListContainer.
-El "Landing" se refiere al ItemListContainer, que mostrará nuestros productos más adelante. 
-Pero por ahora mostrará nada más lo que recibiremos por la prop "greeting".
-
-*/

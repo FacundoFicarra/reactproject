@@ -43,3 +43,19 @@
   display: flex;
   align-items: center;
 }
+
+.contenedor{
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}
+/*arreglar .contenedor o .productos para mostrar bien las cartas*/
+.productos{
+  background-color: blueviolet;
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: 1fr;
+  border-radius: 20%;
+
+
+}
