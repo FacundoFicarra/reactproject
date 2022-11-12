@@ -1,4 +1,4 @@
-import React, {useState, useEffect} from "react";
+import React, {useState} from "react";
 import Container from 'react-bootstrap/Container';
 import Nav from 'react-bootstrap/Nav';
 import Navbar from 'react-bootstrap/Navbar';
@@ -8,7 +8,8 @@ const pages = [
     { label: "Home", link: "/" },
     { label: "Checkout", link: "/checkout" },
     { label: "Militar", link: "/category/militar" },
-    { label: "comun", link: "category/comun"}
+    { label: "comun", link: "category/comun"},
+    { label: "test", link:"/TestEventos"}
 ];
 
 
@@ -29,7 +30,7 @@ return (
                 <Nav className="me-auto">
                 {/*pages.map((page)=>(<a key={page.label}><Nav.Link to={page.link}>{page.label}</Nav.Link></a>))*/}
                 {/*<Nav.Link to={page.link}>{page.label}</Nav.Link>*/}
-                {pages.map((page)=>(<Nav.Link href={page.link}>{page.label}</Nav.Link>))}
+                {pages.map((page)=>(<Nav.Link to={page.link}>{page.label}</Nav.Link>))}
                 </Nav>
                 {/* <Link to={page.link}>{page.label}</Link>*/}
             </Navbar.Collapse>

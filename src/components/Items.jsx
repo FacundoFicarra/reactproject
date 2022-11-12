@@ -1,13 +1,17 @@
-import React from 'react'
+import React,{useContext} from 'react'
 import '../App.css'
 import { Link } from 'react-router-dom'
+import {contextoGeneral} from "../components/ContextContainer"
+
 export default function Item({item}) {
+    const {darkMode,setdarkMode} = useContext(contextoGeneral)
     return (
-    <><div style={{border:"2px solid black", margin:"1rem", color:"red"}} key={item.id}>
+    <><div style={{border:"2px solid black", margin:"1rem", /*color:"red" */color:darkMode? "white":"black",backgroundColor:darkMode?"black":"white"}} key={item.id}>
         {JSON.stringify(item)}
         <Link to ={"/item/" + item.id}>ir al item</Link>
         <br />
         <br />
+        <button onClick={()=>setdarkMode(!darkMode)}> CAMBIAR A DARK MODE</button>
     </div>
 
     {/*export default function Item({tittle, picture, id, price,description})
@@ -25,7 +29,14 @@ export default function Item({item}) {
             </div>
         </div>
     </section> 
-    )*/}
+    )*/
+    
+    /*export const contextoGeneral = createContext();
+
+<contextoGeneral.Provider value={{ darkMode, setdarkMode, x, algo }}>
+*/
+}
+    
     </>
     )
 }

@@ -35,15 +35,19 @@ useEffect(()=>{
 
 
 
-    return  (
+    return  (<>
         <div style={{display:"flex", alignItems:"center", flexDirection:"column", border:"2px solid blueviolet", backgroundColor:"black", color:"white"}}>{
-          producto.id && <>{producto.id + " " 
+          producto.id && <>
+          <picture>
+            <img src={producto.pictureURL}></img>
+          </picture>
+          
+          {producto.id + " " 
           + producto.name + " " 
           + producto.category + " " 
-          + producto.precio + " "
-          + producto.pictureURL}</>}
+          + producto.precio}</>}
         </div>
-        
+        </>
       );
     }
 

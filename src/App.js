@@ -6,15 +6,19 @@ import ItemListContainer from './components/ItemListContainer';
 import Navbar from './components/Navbar';
 import Checkout from "./components/Checkout";
 import ItemDetailContainer from './components/ItemDetailContainer';
+import ContextContainer from './components/ContextContainer';
+
+
+
 
 
 export default function App() {
   
   return ( 
   <>
+  <ContextContainer>
     {/*<Navbar></Navbar>*/}
     {/*<ItemListContainer greeting={true}></ItemListContainer>*/}
-
 
     <BrowserRouter>
       {/* PONGO COMPONENTES QUE QUIERO QUE ESTEN EN TODAS LAS RUTAS */}
@@ -33,6 +37,7 @@ export default function App() {
 {/*ARREGLAR NAVEGACION y hacer la tarea */}
     <BodyApp></BodyApp>
     <Footer />
+    </ContextContainer>
   </>
   );
 }

@@ -36,7 +36,7 @@ useEffect(()=>{
 
     return  (
         <div style={{backgroundcolor:"green", border:"2px solid green"}}>
-          <ItemList productos={productos}></ItemList>
+          <ItemList productos={productos} ></ItemList>
         </div>
       );
     }
