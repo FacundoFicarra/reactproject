@@ -2,7 +2,7 @@ import React,{useState} from 'react'
 import ItemList from './ItemList'
 import { useParams } from 'react-router-dom'
 import { useEffect } from 'react'
-import {productosHC} from "./data"
+import ItemCount from './ItemCount'
 import gorilla_arms from '../images/gorilla_arms.png'
 import sandevistan from '../images/sandevistan.png'
 import mantis_blade from '../images/mantis_blade.png'
@@ -45,7 +45,9 @@ useEffect(()=>{
           {producto.id + " " 
           + producto.name + " " 
           + producto.category + " " 
-          + producto.precio}</>}
+          + producto.precio}
+          <div>
+          <ItemCount></ItemCount></div></>}
         </div>
         </>
       );
